@@ -1,0 +1,31 @@
+node REPL
+read evaluate print loop
+
+
+node -> javascript runtime env
+
+
+webworker - self, nodejs - global, browsers - window, frames - 
+pointing to same global object
+
+in 2020 open JS foundation come with the name globalThis
+(after version 71)
+
+
+----------------------------------------------------
+Common JS Modules (CJS) =>
+modules.exports 
+required()
+By default used in node
+older Way
+-> Synchronous way
+-> Non strict mode
+
+ES Modules(mjs) (ESM) =>
+-> import 
+exports
+-> By default used in React, angular
+-> Newer way
+-> Async option 
+-> strict mode
+----------------------------------------------------
