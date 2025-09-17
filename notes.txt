@@ -103,8 +103,98 @@ garbage collector removes the variable from memory heap if it doesnt get used.
 Async task inside (libuv) are not blocking the main thread inside v8 callstack
 ----------------------------------------------------------------------------------
 
+Require("") -> works in synch way and import work in async
+
+----------------------------------------------------------------------------------
+fs.readFileSync will block the main thread
+
+
+----------------------------------------------------------------------------------
+const crypto = require("node:crypto");
+// core nodeJs module 
+// optional to add node:
+
+----------------------------------------------------------------------------------
+// Once the callstack is empty then only libuv callback functions can be executed even if
+settimeout is zero.
+
+settimeout time counted after callstack gets empty
+
+----------------------------------------------------------------------------------
+V8 Engine working: (other js engine doesnt works the same way) (2017)
+
+Code -> v8 Engine
+A. Parsing
+1. Lexical Analysis (tokanization)
+code -> Tokens
+2. Syntax Analysis (Parsing)
+Tokens -> node (AST) ==== tokens are converted into ast
+WEbsite famouse for ast -> astexplorer.net
+
+
+B. Interpretter/Compiler:
+v8 engines has compiler and interpretter both available
+(JIT compiler - just in time compiler)
+
+- Interpretter
+AST -> Interpretter (Ignitation Interpretter)
+Interpretter -> Byte code // Interpretter converts the ast into byte code
+byte code -> execution // byte code gets executed
+
+Interpretter identifies peace of code that is executed again and again
+then ignitaition interpretter give that code to compiler
+so then whenever it runs again, it runs Fast (the code, which is given to compielr called HOT code)
+                 
+                       HOT code
+Ignitation interpretter -> Turbofan compiler (this process is called optimation also)
+
+- Compiler(Turbo fan compiler)
+compiler -> optimised to machine code
+machine code-> execution
+
+
+- Earlier to turbo fan, crankshaft compiler been used.
+
+- Sometime the code is deoptimised -> 
+while optimizing the code turbo fan compiler makes assumption
+
+- for ex:
+suppose hot code -> sum(10, 5)
+next time sum(2,3)
+next sum(6,5)
+then when user calls the fn with string param
+sum("a", "b") - here the optimization failed
+here it will deoptimized the code
+
+- Also inline caching and copy elision happens in igniation interpretter
+
+the entire above process called JIT
+
+c. Garbage collection - (Mark and sweep algo)
+1. orinaco
+2. oil Pan
+3. Scavenger
+4. mcompact
+----------------------------------------------------------------------------------
+Two types of languages:
+1. Interpretted:
+- Line by line execution
+- Fast Initial Execution
+- Interpretter
+2. Compiled:
+- First compilation (HL code -> machine code)
+then the machine code is executed.
+- Initially heavily, but after compilation it executed Fast
+- Compilers
+----------------------------------------------------------------------------------
+
 
 ----------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------
