@@ -1,3 +1,7 @@
+const obj = require("../test.js");
+
+console.log("y in sum file", obj.y);
+
 function calculateSum(a, b) {
 	return a + b;
 }

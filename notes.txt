@@ -1,0 +1,110 @@
+node REPL
+read evaluate print loop
+
+---------------------------------
+node -> javascript runtime env
+
+
+webworker - self, nodejs - global, browsers - window, frames - 
+pointing to same global object
+
+in 2020 open JS foundation come with the name globalThis
+(after version 71)
+
+
+----------------------------------------------------
+Common JS Modules (CJS) =>
+modules.exports 
+required()
+By default used in node
+older Way
+-> Synchronous way
+-> Non strict mode
+
+ES Modules(mjs) (ESM) =>
+-> import 
+exports
+-> By default used in React, angular
+-> Newer way
+-> Async option 
+-> strict mode
+----------------------------------------------------
+
+
+IIFE->immediately invoked function expression
+node js wrapped the modules before sending it to v8 engine
+in the form of IIFE
+-> privacy - keep variable and functions safe 
+
+(function () {})();
+
+-> question asked: how are variables and function private in different module?
+Answers is IIFE And require
+
+------------------------------------------------------------------
+-> how do you get access to module.exports
+answers - nodeJs is passes module as a parameter to the IIFE
+
+function (module, require, ...otherParams ) {
+     require("path")
+
+     function calculateMultiply(a, b) {
+        return a * b;
+     }
+
+     module.exports = {calculateMultiply}
+    All the code of the module is wrapped inside a function(IIFE)
+}
+
+&&&&&&&
+
+### require(/path)
+1. resolving the module
+     -> ./localpath
+     -> .json ->node:module
+
+2. loading the module 
+    -> File content is loaded according to file type
+    
+3. wraps inside IIFE -> compile 
+4. Evaluation -> code is executed and returns module.exports
+5. caching -> then the module is cached
+it helps when multiple file required multiple same module
+like import of one file into many, the code of the require runs only once.
+
+
+--------------------------------------------------------------------
+Node: Event driven architecture capable of async I/o
+-----------------------------------------------------------------------
+
+Libuv-> offloads async task(Super power to conncet to file, db, www, timer & more)
+and return response to JS engine
+
+library that ASync IO made simple (ITs a C program)
+----------------------------------------------------------------------
+JAVA script talks to libuv and libuv talks to OS
+C language is very efficient to connect to OS
+
+JS is a highlevel code and to connect with OS you need low level language
+for which c we used here
+
+
+Libuv acts as middle layer between js engine and OS
+
+-------------------------------------------------------------------------
+v8 engine creates global execution context inside calls stack while executing the code.
+
+also offloads async tasks to libuv with callback function
+once the async call gets completed, then the callback is executed inside callstack of v8 engine
+
+garbage collector removes the variable from memory heap if it doesnt get used.
+
+-------------------------------------------------------------------------
+Async task inside (libuv) are not blocking the main thread inside v8 callstack
+----------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------
+
