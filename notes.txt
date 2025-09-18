@@ -187,11 +187,17 @@ then the machine code is executed.
 - Initially heavily, but after compilation it executed Fast
 - Compilers
 ----------------------------------------------------------------------------------
+Libuv - Event loop
 
+Event loop can send event to v8 engine callstack when it is idle, or main thread is not busy.
 
+Event loop does wait in the poll phase (in node)
+in browser it keeps running
 ----------------------------------------------------------------------------------
 
-----------------------------------------------------------------------------------
+
+
+-----------------E-----------------------------------------------------------------
 ----------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------
