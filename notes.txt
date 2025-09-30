@@ -1,17 +1,13 @@
 node REPL
 read evaluate print loop
-
 ---------------------------------
 node -> javascript runtime env
-
 
 webworker - self, nodejs - global, browsers - window, frames - 
 pointing to same global object
 
 in 2020 open JS foundation come with the name globalThis
 (after version 71)
-
-
 ----------------------------------------------------
 Common JS Modules (CJS) =>
 modules.exports 
@@ -195,12 +191,107 @@ Event loop does wait in the poll phase (in node)
 in browser it keeps running
 ----------------------------------------------------------------------------------
 
+One cycle of eventloop called one tick
 
+whatever pending callbacks executes before poll phase in eventloop, in the next loop iteration
+
+
+idle, prepare checks handle internally
 
 -----------------E-----------------------------------------------------------------
-----------------------------------------------------------------------------------
+Thread pool used for only:
+fs
+dns.lookup
+crypt.pbkdf
+user specified input
+
+, API doesnt use the threadpool
 
 ----------------------------------------------------------------------------------
+OS:   connects to
+LIBUV <--------> epoll (Linux)(Red-black tree), kqueue (MacOS)
+[Scalable I/O event notification mechanism] at os kernal level
+OS -> kernal -> processes
+
+Every user request needs one socket to connect
+Its not a good practice to have multiple sockets for multiple connections at once
+so epoll manages that.
+
+
+epoll descriptor is a collection of your socket descriptor
+socket descriptor also call fds - file descriptor
+
+One epoll descriptor can manage multiple connection
+
+Libuv uses epoll
+As soon as any activity happens on connection then it notifies libuv and then
+libuv will take care of it using event loop and then it executes in v8 engine.
+----------------------------------------------------------------------------------
+Event emitter
+stream & buffer
+pipes
+----------------------------------------------------------------------------------
+settimeout queue uses minheap data structure in callstack. 
 ----------------------------------------------------------------------------------
 
+Express is a framwork to create http server which can handle the incoming requests.
+
+
 ----------------------------------------------------------------------------------
+Database:
+Database is an organized collection of data.
+
+RDBMS = mysql, postgresSql
+
+SQL:
+EF codd - codd's 12 rules [0-12]
+RDB - Relational db
+
+MYSQL -
+michal wedenius -> MY -> mysql (sum microsystem later acquired oracle), max, maria
+
+michael stonebraker
+Ingres (v. of california)
+later come to university again and worked on sql-> post Ingres
+
+
+NOSQL (mongodb): Not only sql
+- document db
+- key value db
+- graph db
+- wide column db
+- multimodel db
+
+mongo db is a document db.
+---------------------------------------------------------------------------------
+RDBMS (Mysql)
+- table, rows, columns
+- structured data
+- fixed schema
+- sql 
+- Tough horizontal scaling
+- Relationships - foreign keys + joins
+- Read Heavy apps,
+transaction workloads
+- Ex. banking apps.
+
+Nosql(mongodb):
+- collection, document, fields
+- unstructured Data
+- Flexible schema
+- mongodb(mQL), neo4J(cypher)
+- Easy to scale horizontal and vertically
+- Nested Relationships
+- Real Time , big data, distributed computing
+- ex.: real time analytics, social media
+
+
+----------------------------------------------------------------------------------
+NPM: is a repository which contains lots of node module packages
+ 
+
+----------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------
+
