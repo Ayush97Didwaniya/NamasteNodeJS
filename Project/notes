@@ -1,0 +1,31 @@
+DevTinder
+
+1. create an account
+2. Login
+3. Update your profile
+4. Feed Page Explore
+5. Send connection request
+6. See our matches
+7. See the request we have sent
+8. update the profile
+9. delete the profile
+
+LLD:
+
+- DB Design
+
+  - User Collection
+    First Name
+    LastName
+    Email
+    password
+    age
+    gender
+    ....
+  - ConnectionRequest
+    FromUserId
+    To UserId
+    status = pending
+
+- API Design
+-
