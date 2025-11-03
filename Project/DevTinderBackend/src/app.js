@@ -6,7 +6,8 @@ app.get("/hello", (req, res) => {
 	res.send("Hello get api called");
 });
 
-app.get("/user", (req, res) => {
+app.get("/user/:userId/:name/:pass", (req, res) => {
+	console.log(req.params);
 	res.send({ name: "ayush" });
 });
 
