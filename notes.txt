@@ -312,3 +312,13 @@ NPM: is a repository which contains lots of node module packages
 - Reading query params in the route, and dynamic route
 ----------------------------------------------------------------------------------
 
+- multiple route handelrs
+- next
+- next function with erros along with res.send();
+- app.use(req, res, rh1, rh2, [rh3, rh4]);
+- what is middleware? why do we need it?
+- How express JS basically handles request behind the scenes
+- differene between app.use and app.all
+- Write a dummy auth middle for admin
+- Write a dummy user middleware, except post request.
+- erro handling using app.use("/", (err, req, res, next))
