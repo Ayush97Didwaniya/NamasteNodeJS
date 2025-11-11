@@ -321,4 +321,12 @@ NPM: is a repository which contains lots of node module packages
 - differene between app.use and app.all
 - Write a dummy auth middle for admin
 - Write a dummy user middleware, except post request.
-- erro handling using app.use("/", (err, req, res, next))
+- error handling using app.use("/", (err, req, res, next))
+
+- Create a free cluster on MongoDB official Website (Mongo Atlas)
+- Install mongoose library
+- Connect your application to the Database "Connection-url"/devTinder
+- Call the connectionDB function and connect to database before starting application on 7777
+- Create a userSchema & user Model
+- Error Handling using try, catch
+-
