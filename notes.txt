@@ -329,4 +329,9 @@ NPM: is a repository which contains lots of node module packages
 - Call the connectionDB function and connect to database before starting application on 7777
 - Create a userSchema & user Model
 - Error Handling using try, catch
--
+
+
+- JS object vs JSOn (difference)
+- Make the express.json middleware to your app
+- Make you signup API dynamic to recieve the data from the end user.
+- 

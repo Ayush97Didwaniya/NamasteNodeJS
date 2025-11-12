@@ -5,13 +5,18 @@ const { connectDB } = require("./config/database");
 const app = express();
 const User = require("./models/user");
 
+app.use(express.json());
+
 app.post("/signup", async (req, res) => {
-	const userObj = {
-		firstName: "Ayush",
-		lastName: "did",
-		emailId: "ayush.didwaniya@gmail.com",
-		password: "123",
-	};
+	console.log(req.body);
+	// const userObj = {
+	// 	firstName: "Ayush",
+	// 	lastName: "did",
+	// 	emailId: "ayush.didwaniya@gmail.com",
+	// 	password: "123",
+	// };
+
+	const userObj = req.body;
 
 	// Creating a new instance of a User Model
 	const user = new User(userObj);
@@ -20,7 +25,7 @@ app.post("/signup", async (req, res) => {
 		await user.save();
 		res.send("User Added successfully");
 	} catch (err) {
-		res.status(400).send("Error saving the user:" + err.message);
+		res.status(400).send("Error saving the user:");
 	}
 });
 
