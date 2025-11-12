@@ -334,4 +334,9 @@ NPM: is a repository which contains lots of node module packages
 - JS object vs JSOn (difference)
 - Make the express.json middleware to your app
 - Make you signup API dynamic to recieve the data from the end user.
-- 
+- User.findOne with duplicate email Id , which object returned?
+- API - Get user by email
+- API - Feed API - GEt /feed - get all the users from the database
+- API - GetUser by ID.
+- Create a delete user API
+- Difference between patch and put
