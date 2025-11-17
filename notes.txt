@@ -340,3 +340,15 @@ NPM: is a repository which contains lots of node module packages
 - API - GetUser by ID.
 - Create a delete user API
 - Difference between patch and put
+- API - Update a user
+- Explore the mongoose documentation for model mothods
+- What are options in a Model.findOneAndUpdate method, explore more about it
+- API - Update th euser with emailId
+
+- Explore schematype options from the documentation 
+- add required, unique, lowercase, min,minlength, trim
+- add default value,
+- Create a custom validate function for gender
+- Improve the DB Schema - PUT all appropriate Validation on each field in Schema
+- Add timestamp to the userSchema
+- Data sanitizing - add API validation for each field
