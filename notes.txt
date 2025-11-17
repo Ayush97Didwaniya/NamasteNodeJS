@@ -352,3 +352,6 @@ NPM: is a repository which contains lots of node module packages
 - Improve the DB Schema - PUT all appropriate Validation on each field in Schema
 - Add timestamp to the userSchema
 - Data sanitizing - add API validation for each field
+- Explore use validator fn
+- Explore validator library function and Use Validator function for password, email
+- 
