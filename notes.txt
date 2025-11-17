@@ -354,4 +354,11 @@ NPM: is a repository which contains lots of node module packages
 - Data sanitizing - add API validation for each field
 - Explore use validator fn
 - Explore validator library function and Use Validator function for password, email
-- 
+- Never trust req.body
+
+- Validate Data in sign Up API
+- iNstall dcrypt package
+- Create passwordHash using bcrypt.hash and save the use is encrypted password
+- Create login API
+- Compare password and throw errors if email or password is invalid
+
